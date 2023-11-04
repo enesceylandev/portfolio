@@ -1,8 +1,8 @@
 import React from "react";
 
-
 import Hero from "./sections/Hero.jsx";
 import AboutMe from "./sections/AboutMe.jsx";
+import Projects from "./sections/Projects.jsx";
 function App() {
   return (
     <>
@@ -12,6 +12,9 @@ function App() {
       </section>
       <section>
         <AboutMe/>
+      </section>
+      <section>
+        <Projects/>
       </section>
     </div>
     </>
