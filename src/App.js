@@ -3,6 +3,7 @@ import React from "react";
 import Hero from "./sections/Hero.jsx";
 import AboutMe from "./sections/AboutMe.jsx";
 import Projects from "./sections/Projects.jsx";
+import Skills from "./sections/Skills.jsx"
 function App() {
   return (
     <>
@@ -15,6 +16,9 @@ function App() {
       </section>
       <section>
         <Projects/>
+      </section>
+      <section>
+        <Skills/>
       </section>
     </div>
     </>
