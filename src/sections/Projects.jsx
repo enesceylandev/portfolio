@@ -44,23 +44,27 @@ const Projects = () => {
             links: {github: 'www.github.com/medusacollins/frdesginsystem', live:'test'}
         }}
     ]);
-    const scrollable= useState(yazi.length*1500)
     const [activeIndex, setActiveIndex] = useState(0);
-
+ 
     useEffect(() => {
-        const handleScroll = () => {
-          const scrollPosition = window.pageYOffset;
-          const yaziHeight = 2400; // Her bir 'yazi' öğesinin yüksekliği
-          const activeIndex = Math.floor(scrollPosition / yaziHeight);
-          setActiveIndex(activeIndex);
-        };
-      
-        window.addEventListener('scroll', handleScroll);
-      
-        return () => {
-          window.removeEventListener('scroll', handleScroll);
-        };
-      }, []);
+      const handleScroll = () => {
+        const scrollPosition = window.pageYOffset;
+        const yaziHeight = 2400; // Her bir 'yazi' öğesinin yüksekliği
+        let newActiveIndex = Math.floor(scrollPosition / yaziHeight);
+        if (newActiveIndex >= yazi.length) {
+          newActiveIndex = yazi.length - 1;
+        }
+        if (newActiveIndex <= 5){
+          setActiveIndex(newActiveIndex);
+        }
+      };
+    
+      window.addEventListener('scroll', handleScroll);
+    
+      return () => {
+        window.removeEventListener('scroll', handleScroll);
+      };
+    }, [yazi]);
     return (
         <div className='grid grid-cols-2 text-[#303030]'>
           <div className='sticky top-0 h-screen p-11'>
