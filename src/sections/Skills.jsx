@@ -35,7 +35,6 @@ const Skills = () => {
         </div>
         <div className='md:col-start-3 md:row-start-2 md:col-span-3 col-span-5'>
           <p>Product Design</p>
-          <p>Design system</p>
           <p>Project Management</p>
           <p>Concept development</p>
         </div>

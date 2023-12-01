@@ -1,5 +1,5 @@
 import React from 'react'
-import myPic from '../image/ProfilePic.jpg'
+import myPic from '../public/image/ProfilePic.jpg'
 import { motion } from 'framer-motion'
 
 const Hero = () => {
