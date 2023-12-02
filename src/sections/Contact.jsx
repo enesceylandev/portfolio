@@ -18,7 +18,7 @@ const Contact = () => {
     };
   }, [handleScroll]);
 
-  const translateX = scrollX - 12050;
+  const translateX = scrollX - 7800;
 
   return (
     <div className="flex items-center relative h-screen mt-0 overflow-x-hidden z-10">

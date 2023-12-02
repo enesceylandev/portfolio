@@ -15,7 +15,7 @@ const Skills = () => {
     };
   }, [handleScroll]);
 
-  const translateX = -scrollX + 11100;
+  const translateX = -scrollX + 6700;
   return (
     <div className="flex items-center relative h-screen mt-0 overflow-x-hidden">
       <div className="text-[9rem] right-0 font-bold text-gray-200 absolute md:block hidden" style={{ transform: `translateX(${translateX}px)`, transition: 'transform 0.7s ease-out' }}>
