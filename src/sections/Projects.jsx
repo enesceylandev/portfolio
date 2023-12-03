@@ -1,7 +1,6 @@
 import { profilePic } from '../import.js';
-import React, { useState} from 'react';
-import { motion} from 'framer-motion';
-
+import React, { useState } from 'react';
+import { motion } from 'framer-motion';
 
 const Item = (props) => {
   return (
@@ -27,20 +26,87 @@ const Item = (props) => {
         </div>
       </div>
       <div className='h-[1000px] w-1/2 grid grid-cols-2 items-center place-items-center bg-green-500'>
-        {props.project.image.map((item, index) => (
-          <div key={index} className='w-32' style={{ backgroundColor: '#16E0BD' }}>
-          <motion.img
-            // ref={ref}
-            src={item}
-            alt={index}
-            className='w-full'
-            style={{
-              // translateY: inView ? props.scrollPosition : 0
-              translateY: props.scrollPosition - props.index*-170
-            }}
-          />
-        </div>
-        ))}
+        {props.project.image.map((item, index) => {
+
+          function translateY(index,type) {
+            switch (index) {
+              case 0:
+                switch(type){
+                  case "position":
+                    return 200
+                  case "speed":
+                    return 1
+                  case "gap":
+                    return -170
+                  default:
+                    break;
+                }
+                break;
+              case 1:
+                switch(type){
+                  case "position":
+                    return 250
+                  case "speed":
+                    return 1
+                  case "gap":
+                    return -100
+                  default:
+                    break;
+                }
+                break;
+              case 2:
+                switch(type){
+                  case "position":
+                    return 400
+                  case "speed":
+                    return 2
+                  case "gap":
+                    return -10
+                  default:
+                    break;
+                }
+                break;
+              case 3:
+                switch(type){
+                  case "position":
+                    return 500
+                  case "speed":
+                    return 1
+                  case "gap":
+                    return -10
+                  default:
+                    break;
+                }
+                break;
+              case 4:
+                switch(type){
+                  case "position":
+                    return 600
+                  case "speed":
+                    return 1
+                  case "gap":
+                    return -15
+                  default:
+                    break;
+                }
+                break;
+              default:
+                return 0
+            }
+          }
+          translateY(props.index,"speed")
+          return(
+            <div key={index} className='w-32' style={{ backgroundColor: '#16E0BD' }}>
+            <motion.img
+              src={item}
+              alt={index}
+              className='w-full'
+              style={{
+                translateY: (props.scrollPosition + translateY(props.index,"position")) * (index+translateY(props.index,"speed")) - (props.index * translateY(props.index,"gap")) // position, speed, gap
+              }}
+              />{index} | {props.index}
+          </div>
+        )})}
       </div>
     </section>
   );
@@ -99,10 +165,10 @@ export default function Projects() {
 
   useState(() => {
     const handleScroll = () => {
-    setScrollPosition(window.pageYOffset);
+      setScrollPosition(window.pageYOffset);
     };
     window.addEventListener('scroll', handleScroll);
-  
+
     return () => {
       window.removeEventListener('scroll', handleScroll);
     };
