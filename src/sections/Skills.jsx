@@ -15,7 +15,7 @@ const Skills = () => {
     };
   }, [handleScroll]);
 
-  const translateX = -scrollX + 6700;
+  const translateX = -scrollX + 3600;
   return (
     <div className="flex items-center relative h-screen mt-0 overflow-x-hidden">
       <div className="text-[9rem] right-0 font-bold text-gray-200 absolute md:block hidden" style={{ transform: `translateX(${translateX}px)`, transition: 'transform 0.7s ease-out' }}>
@@ -32,6 +32,7 @@ const Skills = () => {
           <p>Mongo DB</p>
           <p>Express JS</p>
           <p>Node JS</p>
+          <p>Python</p>
         </div>
         <div className='md:col-start-3 md:row-start-2 md:col-span-3 col-span-5'>
           <p>Product Design</p>
@@ -39,6 +40,7 @@ const Skills = () => {
           <p>Concept development</p>
         </div>
       </div>
+      
     </div>
   );
 };
