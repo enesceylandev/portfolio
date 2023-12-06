@@ -22,7 +22,7 @@ const AboutMe = () => {
       <div className="text-[9rem] font-bold text-gray-200 absolute md:block hidden" style={{ transform: `translateX(${translateX}px)`, transition: 'transform 0.7s ease-out' }}>
         ABOUT ME
       </div>
-      <div className='text-4xl font-light md:right-5 text-center mx-5 lg:text-left absolute'>
+      <div className='md:text-4xl text-xl font-light md:right-5 text-center mx-5 lg:text-left absolute'>
       Crafting user friendly and aesthetic UI designs is not just my <br className='hidden lg:block'/> profession, it's my passion.
       </div>
     </div>

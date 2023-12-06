@@ -12,18 +12,10 @@ function App() {
       <section className="h-screen items-center justify-center flex text-[#303030]">
       <Hero/>
       </section>
-      <section>
-        <AboutMe/>
-      </section>
-      <section>
-        <Projects/>
-      </section>
-      <section>
-        <Skills/>
-      </section>
-      <section className="text-[#101010] hover:text-[#303030]">
-        <Contact/>
-      </section>
+      <AboutMe/>
+      <Projects/>
+      <Skills/>
+      <Contact/>
     </div>
     </>
   );

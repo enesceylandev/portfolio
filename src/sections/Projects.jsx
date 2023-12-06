@@ -49,9 +49,6 @@ export default function Projects() {
   );
 }
 
-
-
-
 const Item = (props) => {
   function translateY(index,type) {
     switch (index) {
@@ -121,14 +118,14 @@ const Item = (props) => {
   }
   return (
     <section className='flex'>
-      <div className='sticky top-0 w-1/2 h-[70vh] p-11'>
+      <div className='sticky top-0 md:w-1/2 w-full h-[70vh] md:p-11 p-3'>
         <div className='flex flex-col justify-between h-full font-semibold tracking-wide'>
-          <div className='text-3xl'>0{props.index + 1}</div>
-          <div className='space-y-8'>
-            <p className='text-7xl font-bold'>{props.project.name}</p>
+          <div className='md:text-3xl text-xl'>0{props.index + 1}</div>
+          <div className='md:space-y-8 space-y-5'>
+            <p className='md:text-7xl text-4xl font-bold'>{props.project.name}</p>
             <div className='flex'>
               {props.project.stack.map((item, index) => (
-                <span key={index} className='mx-1 flex flex-col bg-[#16E0BD] text-[#16312d] p-2 rounded-full'>
+                <span key={index} className='mx-1 md:text-base text-xs flex flex-col bg-[#16E0BD] text-[#16312d] p-2 rounded-full'>
                   {item}
                 </span>
               ))}
@@ -146,45 +143,30 @@ const Item = (props) => {
           </div>
         </div>
       </div>
-      <div className='h-[1000px] w-1/2 grid grid-cols-2 items-center place-items-center '>
+
+      <div className='h-[1000px] w-1/2  hidden md:grid grid-cols-2 items-center place-items-center '>
         {props.project.image.map((item, index) => {
           return(
-            
-
-            <div key={index} style={{zIndex: props.project.image.length - index}}>
-              <motion.div class="relative mx-auto border-gray-800 dark:border-gray-800 bg-gray-800 border-[14px] rounded-[2.5rem] h-[600px] w-[300px]"
+            <div key={index} className='2xl:scale-100 xl:scale-75 scale-50' style={{zIndex: props.project.image.length - index}}>
+              <motion.div className="relative mx-auto border-black bg-black border-[14px] rounded-[2.5rem] h-[600px] w-[300px]"
                               style={{
                                 translateY: 
                                 (props.scrollPosition + translateY(props.index,"position")) *
                                 ((props.project.image.length - index)*translateY(props.index,"speed")) -
                                 (props.index * translateY(props.index,"gap")),
                                 scale: 1 + ((props.project.image.length - index)/20),
-                              }}
-                            >
-                  <div class="h-[32px] w-[3px] bg-gray-800 dark:bg-gray-800 absolute -start-[17px] top-[72px] rounded-s-lg"></div>
-                  <div class="h-[46px] w-[3px] bg-gray-800 dark:bg-gray-800 absolute -start-[17px] top-[124px] rounded-s-lg"></div>
-                  <div class="h-[46px] w-[3px] bg-gray-800 dark:bg-gray-800 absolute -start-[17px] top-[178px] rounded-s-lg"></div>
-                  <div class="h-[64px] w-[3px] bg-gray-800 dark:bg-gray-800 absolute -end-[17px] top-[142px] rounded-e-lg"></div>
-                  <div class="rounded-[2rem] overflow-hidden w-[272px] h-[572px] bg-white dark:bg-gray-800">
-                      <img src={item} class="block" alt="img" style={{ transform: 'translateY(-50px)' }}/>
+                              }}>
+                  <div className="h-[32px] w-[3px] bg-black absolute -start-[17px] top-[72px] rounded-s-lg"></div>
+                  <div className="h-[46px] w-[3px] bg-black absolute -start-[17px] top-[124px] rounded-s-lg"></div>
+                  <div className="h-[46px] w-[3px] bg-black absolute -start-[17px] top-[178px] rounded-s-lg"></div>
+                  <div className="h-[64px] w-[3px] bg-black absolute -end-[17px] top-[142px] rounded-e-lg"></div>
+                  <div className="rounded-[2rem] bg-black overflow-hidden w-[272px] h-[572px]">
+                      <img src={item} className="block" alt="img" style={{ transform: 'translateY(-50px)' }}/>
                   </div>
               </motion.div>
-              {/* <motion.img
-                src={item}
-                alt={index}
-                className={'w-full'}
-                style={{
-                  translateY: 
-                  (props.scrollPosition + translateY(props.index,"position")) *
-                  ((props.project.image.length - index)*translateY(props.index,"speed")) -
-                  (props.index * translateY(props.index,"gap")),
-                  scale: 1 + ((props.project.image.length - index)/2),
-                }}
-              /> */}
             </div>
           )})}
       </div>
-      
     </section>
   );
 };
