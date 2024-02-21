@@ -18,7 +18,7 @@ const AboutMe = () => {
   const translateX = scrollX - 200;
 
   return (
-    <div className="flex items-center relative h-screen mt-0 overflow-x-hidden">
+    <div className="flex items-center relative h-[400px] mb-[200px] mt-0 overflow-x-hidden">
       <div className="text-[9rem] font-bold text-gray-200 absolute md:block hidden" style={{ transform: `translateX(${translateX}px)`, transition: 'transform 0.7s ease-out' }}>
         ABOUT ME
       </div>
