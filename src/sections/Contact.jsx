@@ -1,7 +1,8 @@
-import React, { useEffect, useState, useCallback } from 'react';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faGithub, faLinkedin } from '@fortawesome/free-brands-svg-icons';
 import { faEnvelope } from '@fortawesome/free-solid-svg-icons';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import React, { useCallback, useEffect, useState } from 'react';
+import { upworkLogo } from '../import.js';
 
 const Contact = () => {
   const [scrollX, setScrollX] = useState(0);
@@ -28,8 +29,10 @@ const Contact = () => {
       <div className='text-8xl font-light flex items-center justify-center w-full z-20'>
         <div className="flex flex-col md:flex-row items-center justify-center space-y-10 md:space-y-0 md:space-x-20">
           <button className="mx-auto hover:scale-110 transition-all" onClick={() => window.open('https://github.com/MedusaCollins', '_blank')}><FontAwesomeIcon icon={faGithub} /></button>
-          <button className="mx-auto hover:scale-110 transition-all" onClick={() => window.location.href = 'mailto:enesfurkanceylan@hotmail.com'}><FontAwesomeIcon icon={faEnvelope} /></button>
-          <button className="mx-auto hover:scale-110 transition-all" onClick={() => window.open('https://www.linkedin.com/in/enes-ceylan-5b893a1a3/', '_blank')}><FontAwesomeIcon icon={faLinkedin} /></button>
+          <button className="mx-auto hover:scale-110 transition-all" onClick={() => window.location.href = 'mailto:contact@enesceylan.dev'}><FontAwesomeIcon icon={faEnvelope} /></button>
+          <button className="mx-auto hover:scale-110 transition-all" onClick={() => window.open('https://www.linkedin.com/in/eness-ceylan/', '_blank')}><FontAwesomeIcon icon={faLinkedin} /></button>
+          <button className="mx-auto hover:scale-110 transition-all" onClick={() => window.open('https://www.upwork.com/freelancers/~016f7801c15a80de18', '_blank')}><img src={upworkLogo} alt='upwork' className='w-28' /></button>
+          {/* Buraya upwork bağlantısı gelecek */}
         </div>
       </div>
     </div>

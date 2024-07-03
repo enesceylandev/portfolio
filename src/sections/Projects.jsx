@@ -1,12 +1,8 @@
+import { faArrowUpRightFromSquare } from "@fortawesome/free-solid-svg-icons";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { motion } from "framer-motion";
+import React, { useState } from "react";
 import {
-  meduware1,
-  meduware2,
-  meduware3,
-  meduware4,
-  secondchanges1,
-  secondchanges2,
-  secondchanges3,
-  secondchanges4,
   algoriddle1,
   algoriddle2,
   algoriddle3,
@@ -15,11 +11,15 @@ import {
   discord2,
   discord3,
   discord4,
+  meduware1,
+  meduware2,
+  meduware3,
+  meduware4,
+  secondchanges1,
+  secondchanges2,
+  secondchanges3,
+  secondchanges4,
 } from "../import.js";
-import React, { useState } from "react";
-import { motion } from "framer-motion";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faArrowUpRightFromSquare } from "@fortawesome/free-solid-svg-icons";
 
 export default function Projects() {
   const [info] = React.useState([
@@ -31,8 +31,8 @@ export default function Projects() {
         stack: ["React", "TypeScript", "TailwindCSS"],
         image: [algoriddle1, algoriddle2, algoriddle3, algoriddle4],
         links: {
-          github: "https://github.com/MedusaCollins/AlgoRiddle",
-          live: "https://algoriddle.vercel.app/",
+          Github: "https://github.com/MedusaCollins/AlgoRiddle",
+          Live: "https://algoriddle.enesceylan.dev",
         },
       },
     },
@@ -43,7 +43,11 @@ export default function Projects() {
           "A Discord clone that allows users to chat with each other in real-time, login with google account, create and join servers, and send messages to each other.",
         stack: ["React", "Node", "Express", "MongoDB", "TailwindCSS"],
         image: [discord1, discord2, discord3, discord4],
-        links: { github: "https://github.com/MedusaCollins/discord-clone" },
+        links: {
+          Github: "https://github.com/MedusaCollins/discord-clone",
+          Live: "https://discord-clone.enesceylan.dev",
+          "Video Presentation": "https://youtu.be/7Gal4R5hMjU"
+        }
       },
     },
     {
@@ -53,7 +57,10 @@ export default function Projects() {
           "E-commerce platform that facilitates easy buying and selling of used products by connecting buyers and sellers.",
         stack: ["React", "Node", "Express", "MongoDB", "TailwindCSS"],
         image: [secondchanges1, secondchanges2, secondchanges3, secondchanges4],
-        links: { github: "https://github.com/MedusaCollins/secondChanges" },
+        links: {
+          Github: "https://github.com/MedusaCollins/secondChanges",
+          "Video Presentation": "https://www.youtube.com/watch?v=Bl0fNF5CrFM"
+        },
       },
     },
     {
@@ -64,8 +71,8 @@ export default function Projects() {
         stack: ["html", "css", "javascript"],
         image: [meduware1, meduware2, meduware3, meduware4],
         links: {
-          github: "https://github.com/MedusaCollins/meduware",
-          live: "https://medusacollins.github.io/meduware/",
+          Github: "https://github.com/MedusaCollins/meduware",
+          Live: "https://medusacollins.github.io/meduware/",
         },
       },
     },
@@ -185,30 +192,19 @@ const Item = (props) => {
             </div>
             <p className="font-normal text-2xl">{props.project.description}</p>
           </div>
-          <div className="flex flex-col gap-2">
-            {props.project.links.github && (
+          <div className="flex flex-col gap-2 mt-5">
+            {Object.entries(props.project.links).map(([key, value], index) => (
               <a
-                href={props.project.links.github}
+                key={index}
+                href={value}
                 target="_blank"
                 rel="noreferrer"
                 className="hover:text-[#16E0BD] transition-all w-fit"
               >
-                Github
+                {key + " "}
                 <FontAwesomeIcon icon={faArrowUpRightFromSquare} />
               </a>
-            )}
-
-            {props.project.links.live && (
-              <a
-                href={props.project.links.live}
-                target="_blank"
-                rel="noreferrer"
-                className="hover:text-[#16E0BD] transition-all w-fit"
-              >
-                Live
-                <FontAwesomeIcon icon={faArrowUpRightFromSquare} />
-              </a>
-            )}
+            ))}
           </div>
         </div>
       </div>
@@ -227,17 +223,17 @@ const Item = (props) => {
                   translateY:
                     (props.scrollPosition +
                       translateY(props.index, "position")) *
-                      ((props.project.image.length - index) *
-                        translateY(props.index, "speed")) -
+                    ((props.project.image.length - index) *
+                      translateY(props.index, "speed")) -
                     props.index * translateY(props.index, "gap"),
                   scale: 1 + (props.project.image.length - index) / 20,
                   transition: "transform 0.4s ease-out",
                 }}
               >
-                <div className="h-[32px] w-[3px] bg-black absolute -start-[17px] top-[72px] rounded-s-lg"></div>
-                <div className="h-[46px] w-[3px] bg-black absolute -start-[17px] top-[124px] rounded-s-lg"></div>
-                <div className="h-[46px] w-[3px] bg-black absolute -start-[17px] top-[178px] rounded-s-lg"></div>
-                <div className="h-[64px] w-[3px] bg-black absolute -end-[17px] top-[142px] rounded-e-lg"></div>
+                <div className="h-[32px] w-[3px] bg-black absolute -start-[17px] top-[72px] rounded-s-lg" />
+                <div className="h-[46px] w-[3px] bg-black absolute -start-[17px] top-[124px] rounded-s-lg" />
+                <div className="h-[46px] w-[3px] bg-black absolute -start-[17px] top-[178px] rounded-s-lg" />
+                <div className="h-[64px] w-[3px] bg-black absolute -end-[17px] top-[142px] rounded-e-lg" />
                 <div className="rounded-[2rem] bg-black overflow-hidden w-[272px] h-[572px]">
                   <img
                     src={item}
