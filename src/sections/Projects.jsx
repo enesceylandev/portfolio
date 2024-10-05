@@ -2,24 +2,7 @@ import { faArrowUpRightFromSquare } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { motion } from "framer-motion";
 import React, { useState } from "react";
-import {
-  algoriddle1,
-  algoriddle2,
-  algoriddle3,
-  algoriddle4,
-  discord1,
-  discord2,
-  discord3,
-  discord4,
-  meduware1,
-  meduware2,
-  meduware3,
-  meduware4,
-  secondchanges1,
-  secondchanges2,
-  secondchanges3,
-  secondchanges4,
-} from "../import.js";
+import * as images from '../import';
 
 export default function Projects() {
   const [info] = React.useState([
@@ -29,7 +12,7 @@ export default function Projects() {
         description:
           "AlgoRiddle is an open-source and user-friendly platform where users enhance their programming skills by solving algorithmic puzzles presented at various difficulty levels on a daily basis.",
         stack: ["React", "TypeScript", "TailwindCSS"],
-        image: [algoriddle1, algoriddle2, algoriddle3, algoriddle4],
+        image: [images.algoriddle1, images.algoriddle2, images.algoriddle3, images.algoriddle4],
         links: {
           Github: "https://github.com/MedusaCollins/AlgoRiddle",
           Live: "https://algoriddle.enesceylan.dev",
@@ -42,10 +25,9 @@ export default function Projects() {
         description:
           "A Discord clone that allows users to chat with each other in real-time, login with google account, create and join servers, and send messages to each other.",
         stack: ["React", "Node", "Express", "MongoDB", "TailwindCSS"],
-        image: [discord1, discord2, discord3, discord4],
+        image: [images.discord1, images.discord2, images.discord3, images.discord4],
         links: {
           Github: "https://github.com/MedusaCollins/discord-clone",
-          Live: "https://discord-clone.enesceylan.dev",
           "Video Presentation": "https://youtu.be/7Gal4R5hMjU"
         }
       },
@@ -56,7 +38,7 @@ export default function Projects() {
         description:
           "E-commerce platform that facilitates easy buying and selling of used products by connecting buyers and sellers.",
         stack: ["React", "Node", "Express", "MongoDB", "TailwindCSS"],
-        image: [secondchanges1, secondchanges2, secondchanges3, secondchanges4],
+        image: [images.secondchanges1, images.secondchanges2, images.secondchanges3, images.secondchanges4],
         links: {
           Github: "https://github.com/MedusaCollins/secondChanges",
           "Video Presentation": "https://www.youtube.com/watch?v=Bl0fNF5CrFM"
@@ -69,7 +51,7 @@ export default function Projects() {
         description:
           "A website created to enhance the visibility and boost sales of the Turkish CS:GO community server within the community.",
         stack: ["html", "css", "javascript"],
-        image: [meduware1, meduware2, meduware3, meduware4],
+        image: [images.meduware1, images.meduware2, images.meduware3, images.meduware4],
         links: {
           Github: "https://github.com/MedusaCollins/meduware",
           Live: "https://medusacollins.github.io/meduware/",
@@ -105,6 +87,7 @@ export default function Projects() {
 }
 
 const Item = (props) => {
+
   function translateY(index, type) {
     switch (index) {
       case 0:
