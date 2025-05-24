@@ -74,7 +74,7 @@ export default function Projects() {
         ],
         links: {
           Github: "https://github.com/enesceylandev/meduware",
-          Live: "https://medusacollins.github.io/meduware/",
+          Live: "https://enesceylandev.github.io/meduware/",
         },
       },
     },
